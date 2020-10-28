@@ -1,0 +1,6 @@
+ <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+        <Target Name="MyTarget">
+            <SimpleTask MyProperty="Example of a variable passed in from the xml file to the cs file (dll)."/>
+        </Target>
+    <UsingTask TaskName="SimpleTask" AssemblyFile="calc.dll" />
+</Project>

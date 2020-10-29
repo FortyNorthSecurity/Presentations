@@ -7,6 +7,7 @@ Students taking this workshop will learn the fundamentals of how application whi
 Requirements: a Windows VM or Host with Windows Defender + other A/V turned off. 
 
 ### Workshop Exercise Files
+There are 6 exercises in this workshop. For each exercise, we've supplied a demo PoC file or files for you to use. All of these PoCs are publicly available in other repositories (most of them from @SubTee).
 
 ##### RegSvr32 (Exercise #1)
 - calc.txt
@@ -22,8 +23,8 @@ Requirements: a Windows VM or Host with Windows Defender + other A/V turned off.
 - calc.xsl
 
 ##### WMIC GadgetToJScript (Exercise #5)
-- GadgetToJScript.exe
-- NDesk.Options.dll
+- GadgetToJScript.exe (Compiled from: https://github.com/rasta-mouse/GadgetToJScript)
+- NDesk.Options.dll (Compiled from: https://github.com/rasta-mouse/GadgetToJScript)
 - calc.xsl
 - gadget.cs
 

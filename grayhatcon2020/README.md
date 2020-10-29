@@ -4,7 +4,7 @@
 
 Students taking this workshop will learn the fundamentals of how application whitelisting works and how to bypass it. This repository contains all of the files needed to conduct the workshop exercises. Video links to the workshop exercise demos are also included below. 
 
-Requirements: a Windows VM or Host that you can turn off Windows Defender + other A/V. 
+Requirements: a Windows VM or Host with Windows Defender + other A/V turned off. 
 
 ### Workshop Exercise Files
 

@@ -5,6 +5,10 @@ A collection of presentations (and related resources) that we've given at FortyN
 #### Wild West Hackin' Fest
 A Master Class on Offensive MSBuild by [@JoeLeonJr](https://github.com/joeleonjr) and [@ChrisTruncer](https://github.com/ChrisTruncer)  ([Slide Deck](https://github.com/FortyNorthSecurity/Presentations/blob/master/MSBuild%20Masterclass.pdf))
 
+## May 2021
+#### x33fcon
+What the F# by [@JoeLeonJr](https://github.com/joeleonjr) and [@ChrisTruncer](https://github.com/ChrisTruncer)  ([Slide Deck](https://github.com/FortyNorthSecurity/What-The-F))
+
 ## October 2020
 #### GrayHat Con
 A Practical Introduction to Bypassing Application Whitelisting by [@JoeLeonJr](https://github.com/joeleonjr) ([Slide Deck + Lab Resources](https://github.com/FortyNorthSecurity/Presentations/tree/master/grayhatcon2020))
